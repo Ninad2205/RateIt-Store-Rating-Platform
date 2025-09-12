@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Theme Cache</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .success {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .info {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Clear Theme Cache</h1>
+        
+        <div class="info">
+            <p><strong>Current Theme Setting:</strong> <span id="currentTheme">Loading...</span></p>
+            <p><strong>LocalStorage Theme:</strong> <span id="localStorageTheme">Loading...</span></p>
+        </div>
+
+        <button onclick="clearTheme()">Clear Theme Cache & Force Light Mode</button>
+        <button onclick="setDarkMode()">Set Dark Mode</button>
+        <button onclick="setLightMode()">Set Light Mode</button>
+        <button onclick="goToApp()">Go to Application</button>
+
+        <div id="result"></div>
+
+        <div class="info">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Click "Clear Theme Cache & Force Light Mode"</li>
+                <li>Click "Go to Application"</li>
+                <li>The app should now start in light mode</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function updateDisplay() {
+            const currentTheme = document.documentElement.classList.contains('dark') ? 'Dark' : 'Light';
+            const localStorageTheme = localStorage.getItem('theme') || 'None';
+            
+            document.getElementById('currentTheme').textContent = currentTheme;
+            document.getElementById('localStorageTheme').textContent = localStorageTheme;
+        }
+
+        function clearTheme() {
+            // Clear localStorage
+            localStorage.removeItem('theme');
+            
+            // Force light mode
+            document.documentElement.classList.remove('dark');
+            
+            updateDisplay();
+            document.getElementById('result').innerHTML = '<p class="success">✅ Theme cache cleared! Application will start in light mode.</p>';
+        }
+
+        function setDarkMode() {
+            localStorage.setItem('theme', 'dark');
+            document.documentElement.classList.add('dark');
+            updateDisplay();
+            document.getElementById('result').innerHTML = '<p class="success">✅ Dark mode set!</p>';
+        }
+
+        function setLightMode() {
+            localStorage.setItem('theme', 'light');
+            document.documentElement.classList.remove('dark');
+            updateDisplay();
+            document.getElementById('result').innerHTML = '<p class="success">✅ Light mode set!</p>';
+        }
+
+        function goToApp() {
+            window.location.href = 'http://localhost:3000';
+        }
+
+        // Initialize display
+        updateDisplay();
+    </script>
+</body>
+</html> 

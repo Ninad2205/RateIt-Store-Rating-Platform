@@ -59,7 +59,7 @@ const Layout = () => {
           <div className="flex h-16 items-center justify-between px-4">
             <h1 className={`text-xl font-bold ${
               isDark ? 'text-white' : 'text-gray-900'
-            }`}>Store Rating System</h1>
+            }`}>Rate It</h1>
             <button
               onClick={() => setSidebarOpen(false)}
               className={`${
@@ -130,7 +130,7 @@ const Layout = () => {
           <div className="flex h-16 items-center px-4">
             <h1 className={`text-xl font-bold ${
               isDark ? 'text-white' : 'text-gray-900'
-            }`}>Store Rating System</h1>
+            }`}>Rate It</h1>
           </div>
           <nav className="flex-1 space-y-1 px-2 py-4">
             {allNavigation.map((item) => {

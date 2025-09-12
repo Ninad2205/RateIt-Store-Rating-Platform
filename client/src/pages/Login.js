@@ -64,7 +64,7 @@ const Login = () => {
              
              {/* Main Heading */}
              <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-               Store Rating System
+               Rate It
              </h1>
              
              {/* Subtitle */}
@@ -189,16 +189,7 @@ const Login = () => {
                </p>
              </div>
 
-             {/* Demo Account Info */}
-             <div className="mt-6 p-4 rounded-xl bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600">
-               <p className="text-sm font-semibold text-center mb-2 text-gray-700 dark:text-gray-200">
-                 🚀 Demo Admin Account
-               </p>
-               <div className="text-xs text-center space-y-1 text-gray-600 dark:text-gray-400">
-                 <p>Email: <span className="font-mono">admin@store-rating.com</span></p>
-                 <p>Password: <span className="font-mono">Admin@123</span></p>
-               </div>
-             </div>
+             
           </div>
         </div>
       </div>

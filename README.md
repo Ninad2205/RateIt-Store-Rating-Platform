@@ -117,7 +117,7 @@ A comprehensive full-stack web application for rating and managing stores with r
 
 ### **System Administrator**
 - **Email**: admin@store-rating.com
-- **Password**: password
+- **Password**: Admin@123
 
 ## 📊 **Database Schema**
 
